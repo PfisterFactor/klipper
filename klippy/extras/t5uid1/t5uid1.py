@@ -764,9 +764,12 @@ class T5UID1:
         return self.heaters.lookup_heater(heater).min_extrude_temp
 
     def probed_matrix(self):
-        if self.bed_mesh is None:
+        if self.bed_mesh is None or self.probe is None:
             return 0
-        count = len(self.bed_mesh.bmc.probe_mgr.probe_helper.results)
+        # Upstream moved per-point results out of the bed mesh probe helper
+        # and into the probe session that is open while probing runs.
+        probe_session = getattr(self.probe, 'probe_session', None)
+        count = len(getattr(probe_session, 'results', ()))
         points_map = [ 0,  1,  2,  3,  4,
                        9,  8,  7,  6,  5,
                       10, 11, 12, 13, 14,
