@@ -1,0 +1,4 @@
+[submodule "lib/sv06plus-screen"]
+	path = lib/sv06plus-screen
+	url = https://github.com/fryc88/klipper-sv06plus-screen.git
+	branch = main

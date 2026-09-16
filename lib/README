@@ -183,3 +183,12 @@ version 2.2 DDL minus example directory, empty/extra files
 The n32g45x directory contains parts of code from:
   https://github.com/RT-Thread/rt-thread/tree/master/bsp/n32g452xx/Libraries/N32_Std_Driver
 version v1.0.1 (77638c17877c4b6b0b81e189a36bb08b3384923b)
+
+The sv06plus-screen directory is a git submodule containing the DWIN
+T5UID1 screen firmware (DWIN_SET.zip) for the Sovol SV06 Plus / SV01 Pro
+stock display, taken from:
+  https://github.com/fryc88/klipper-sv06plus-screen
+version 9de16a5169ab13f16618b097625b5bae8211af5e. It pairs with the
+[t5uid1] support in klippy/extras/t5uid1. The firmware5.bin file in that
+repository is a prebuilt micro-controller binary from an old Klipper
+fork; build the micro-controller firmware from this tree instead.
